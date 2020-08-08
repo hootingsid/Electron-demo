@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Electron demo APP</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Electron Demo App</h1>
+        <div id="output"></div>
+    </div>
+</body>
+<script>
+    console.log(process);
+    let output = `
+    <h2 class="page-header">App Version data</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Node: ${process.versions.node}</li>
+        <li class="list-group-item">Node: ${process.env.USERDOMAIN}</li>
+        <li class="list-group-item">Node: ${process.env.USERNAME}</li>
+    </ul>
+    `;
+    document.getElementById('output').innerHTML = output;
+</script>
+<script>
+    require('./renderer.js');
+</script>
+
+</html>
